@@ -5,6 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 
 @Entity
 @Table(name = "student")
@@ -14,6 +15,7 @@ public class Student {
 	private int id;
 	private String name;
 	private int rollNumber;
+	@Transient
 	private String gender;
 	private int age;
 	private String course;

@@ -22,6 +22,11 @@ public class StudentDao {
 		return studentrepo.findAll();
 	}
 	
+	public String patchUpdate(Student s) {
+		studentrepo.save(s);
+		return "Updated";
+	}
+	
 	
 
 }

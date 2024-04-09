@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,6 +35,11 @@ public class StudentController {
 	@GetMapping("/attendance") 
 	public List<Integer> findatt() {
 		return studentser.findatt();
+	}
+	
+	@PatchMapping("/patch/{id}") 
+	public String patchUpdate(@PathVariable int id,@RequestBody Student s) {
+		return studentser.patchUpdate(id,s);
 	}
 	
 

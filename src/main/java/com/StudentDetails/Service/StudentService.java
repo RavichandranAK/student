@@ -45,5 +45,19 @@ public class StudentService {
 		}
 		return att;
 	}
+	
+	public String patchUpdate(int id,Student s) {
+		List<Student> temp=studentdao.findAll();
+		Student e=new Student();
+		for(Student x:temp) {
+			if(x.getId()==id) {
+				x.setName(s.getName());
+				x.setCourse(s.getCourse());
+				e=x;
+			}
+			
+		}
+		return studentdao.patchUpdate(e);
+	}
 
 }
